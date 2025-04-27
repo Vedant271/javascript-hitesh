@@ -7,6 +7,19 @@
 // == -> checks for value and memory for String
 // isEquals -> checks only for value for String
 
+// Nan confusion
+let stringValue1 = "23";
+console.log(Number(stringValue1));
+console.log(typeof Number(stringValue1));
+let stringValue2 = "24abc"; // dont put check on type (if it is a number or not because NaN is number type may problematic), 
+                            // put check using NaN (if it is NaN or not, then perform needed number operation), 
+                            // if conversion possible => "33" -> 33, null -> 0, true -> 1, false -> 0
+                            // if conversion not possible => "23abc", "Hello World", undefined -> NaN 
+console.log(Number(stringValue2)); // converted to NaN -> type of number
+console.log(typeof Number(stringValue2));
+console.log();
+
+
 // Explicit Data Type Conversion JavaScript
 // number to string
 let someNumber = 123;
