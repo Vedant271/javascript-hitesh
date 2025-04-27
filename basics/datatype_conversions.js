@@ -108,4 +108,41 @@ console.log();
 
 // equality comparison -> comparison happens once variables converted to same data type
 console.log(5 == "5");
+console.log();
 
+
+
+
+// Tricky Conversions
+console.log("1" + 2 + 2);
+console.log(1 + 2 + "2");
+console.log();
+
+console.log(3 + 4 * 5 % 3); // precedance -> mul, rem, add
+// console.log(++true); // not possible
+// console.log(true++); // not possible
+console.log();
+
+let someNum1, someNum2, someNum3;
+someNum1 = someNum2 = someNum3 = 2 + 2;
+console.table([someNum1, someNum2, someNum3]);
+
+// cleaner way
+let someNum4 = someNum5 = someNum6 = 2 + 2;
+console.table([someNum4, someNum5, someNum6]);
+// So what happens to num2 and num3?
+// JavaScript creates num3 and num2 as global variables automatically — as var-type globals (attached to the window object in browsers).
+// They are NOT block-scoped like let, they are function-scoped (classic old JavaScript behavior).
+
+/*
+Variable	Scope	        Type
+num1	    block-scoped	let
+num2	    global-scoped	behaves like var
+num3	    global-scoped	behaves like var
+*/
+
+// cleaner and safer(someNum5 & someNum6 will be global scoped) way
+let someNum7 = 2 + 2;
+let someNum8 = someNum7;
+let someNum9 = someNum7;
+console.table([someNum7, someNum8, someNum9]);
