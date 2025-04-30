@@ -29,3 +29,9 @@ console.log();
 // === -> strict check, value and data type both checked
 console.log("2" === 2);
 console.log();
+
+// NaN is not equal to NaN
+console.log(NaN == NaN);
+console.log();
+
+
